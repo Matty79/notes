@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./css/skeleton.css">
+<script src="notePad.js"></script>
+</head>
+<body>
+  <div id="hider">
+<h1>My Notes</h1>
+<p id="test">hello</p>
+      <form>
+        <div>
+        <input id="content" type="text"  style="width: 200px; height: 200px">
+      </div>
+        <input id="create" type="submit" style="background-color:green; color:white">
+      </form>
+<ul id="abbrv">
+
+</ul>
+</div>
+<p id="para">
+</p>
+
+
+<script>
+  var note = new Notepad;
+  note.note();
+  // note.abbrv();
+    // function abbrv(){
+    //     var ul = document.getElementById("abbrv");
+    //     var li = document.createElement("li");
+    //     var para = document.createElement("p")
+    //     var p = document.getElementById("para")
+    //     li.appendChild(document.createTextNode(document.getElementById("content").value));
+    //     ul.appendChild(li);
+    //     para.appendChild(document.createTextNode(document.getElementById("content").value));
+    //     p.appendChild(para);
+    // };
+</script>
+</body>
+</html>
