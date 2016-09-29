@@ -1,0 +1,10 @@
+p.effect {
+    white-space: nowrap;
+    width: 12em;
+    overflow: hidden;
+}
+
+p.effect:hover {
+    text-overflow: inherit;
+    overflow: visible;
+}
