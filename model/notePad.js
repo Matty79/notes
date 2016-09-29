@@ -1,21 +1,16 @@
 function Notepad(){
-
+this.notes = [];
 }
 
 Notepad.prototype.note = function(){
+  var notestore = this.notes;
   document
   .getElementById("create")
     .addEventListener("click", function(clickEvent){
       clickEvent.preventDefault();
       Notepad.prototype.list();
       Notepad.prototype.create();
-    });
-    document
-    .getElementById("test")
-    .addEventListener("click", function(clickEvent){
-      clickEvent.preventDefault();
-      document.getElementById("hider").style.visibility = "hidden";
-      // Notepad.prototype.hide();
+      Notepad.prototype.store(notestore);
     });
 };
 
@@ -26,7 +21,7 @@ Notepad.prototype.create = function(){
   p.appendChild(para);
 };
 
-Notepad.prototype.abbrNote = function (note) {
+Notepad.prototype.abbrNote = function(note) {
   if(note.length > 20) {
     return note.substring(0,19)+"...";
   } else {
@@ -34,14 +29,18 @@ Notepad.prototype.abbrNote = function (note) {
   }
 };
 
-Notepad.prototype.list = function(){
+Notepad.prototype.list = function(array){
   var ul = document.getElementById("abbrv");
   var li = document.createElement("li");
   var a = document.createElement("a");
   var abNote = document.createTextNode(Notepad.prototype.abbrNote(document.getElementById("content").value));
-  // a.setAttribute('href', "http://google.com");
+  a.setAttribute('href', "http://google.com");
   a.appendChild(abNote);
-  li.setAttribute('id', "test");
   li.appendChild(a);
   ul.appendChild(li);
+};
+
+Notepad.prototype.store = function (notestore) {
+  var notestring = document.getElementById("content").value;
+  notestore.push(notestring);
 };
